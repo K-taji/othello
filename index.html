@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>8×8 オセロ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <h1>8×8 オセロ</h1>
+        <div class="toolbar">
+            <button id="resetBtn" type="button">リセット</button>
+            <span id="turnLabel"></span>
+        </div>
+        <div id="board" class="board" role="grid" aria-label="8×8 オセロ盤"></div>
+        <div class="status">
+            <div id="score" class="score"></div>
+            <div id="message" class="message" aria-live="polite"></div>
+        </div>
+        <details class="help">
+            <summary>遊び方</summary>
+            <ul>
+                <li>黒が先手。打てる場所は薄い点で表示。</li>
+                <li>石が置けない場合は自動でパスします。</li>
+                <li>全て置けなくなったら終了です。</li>
+            </ul>
+        </details>
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+</html>
+
+

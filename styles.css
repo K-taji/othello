@@ -1,0 +1,102 @@
+:root{
+  --bg:#0f1115;
+  --panel:#151a22;
+  --board:#176b3a;
+  --cell:#1a7c44;
+  --grid:#0e4d2a;
+  --text:#e6ebf0;
+  --muted:#98a2b3;
+  --black:#111;
+  --white:#f7f7f7;
+  --accent:#00d18f;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Apple Color Emoji,Segoe UI Emoji;
+  color:var(--text);
+  background:radial-gradient(1200px 800px at 80% -10%, #1a2130, transparent 60%), var(--bg);
+}
+.app{
+  max-width:720px;
+  margin:24px auto;
+  padding:16px;
+}
+h1{
+  margin:0 0 12px;
+  font-size:22px;
+  font-weight:700;
+}
+.toolbar{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+}
+button{
+  appearance:none;
+  border:none;
+  background:var(--panel);
+  color:var(--text);
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  box-shadow:inset 0 0 0 1px #263244;
+}
+button:hover{box-shadow:inset 0 0 0 1px var(--accent)}
+#turnLabel{color:var(--muted)}
+
+.board{
+  width:min(92vw,520px);
+  aspect-ratio:1/1;
+  background:linear-gradient(180deg, var(--board), #125f34);
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 0 0 6px #0d3e23, inset 0 0 0 2px #0b311c;
+  display:grid;
+  grid-template-columns:repeat(8,1fr);
+  gap:2px;
+  padding:6px;
+  position:relative;
+}
+.cell{
+  background:linear-gradient(180deg, var(--cell), #156d3b);
+  border-radius:6px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:inset 0 0 0 1px var(--grid);
+}
+.disc{
+  width:76%;
+  height:76%;
+  border-radius:50%;
+  box-shadow:inset 0 8px 16px rgba(255,255,255,.12), inset 0 -10px 16px rgba(0,0,0,.35), 0 2px 6px rgba(0,0,0,.35);
+}
+.disc.black{background:radial-gradient(120% 120% at 30% 25%, #333, var(--black))}
+.disc.white{background:radial-gradient(120% 120% at 30% 25%, #fff, #bbb)}
+
+.hint{
+  width:18%;
+  height:18%;
+  border-radius:50%;
+  background:radial-gradient(circle at 50% 50%, rgba(0,209,143,.9), rgba(0,209,143,.15));
+  filter:drop-shadow(0 0 6px rgba(0,209,143,.35));
+}
+.cell.playable{cursor:pointer}
+.cell.playable:hover .hint{transform:scale(1.2)}
+
+.status{margin-top:12px; display:flex; align-items:center; gap:16px}
+.score{font-variant-numeric:tabular-nums}
+.message{color:var(--muted)}
+
+.help{margin-top:12px; color:var(--muted)}
+.help summary{cursor:pointer}
+
+@media (max-width:420px){
+  .app{padding:12px}
+  h1{font-size:18px}
+}
+
+
